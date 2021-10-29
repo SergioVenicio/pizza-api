@@ -1,0 +1,15 @@
+Resources:
+  # DYNAMODB #
+  OrdersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: TB_PIZZAS_ORDERS
+      BillingMode: PAY_PER_REQUEST 
+      AttributeDefinitions:
+        -
+          AttributeName: orderId
+          AttributeType: S
+      KeySchema:
+        - 
+          AttributeName: orderId
+          KeyType: HASH
