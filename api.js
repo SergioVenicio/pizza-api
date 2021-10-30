@@ -42,6 +42,13 @@ api.put('/orders/{id}', async (request) => (
   error: 404
 });
 
+api.post('/delivery', async (request) => (
+  await orderHandler.updateDeliveryStatus(request)
+), {
+  success: 200,
+  error: 400
+})
+
 api.post('/orders', async request => (
   await orderHandler.create(request)
 ), {
